@@ -39,4 +39,6 @@ Thumbs.db
 
 ###### here are the files to ignore
 
-node-ctb/node_modules
+node_modules/
+.meteor/local/
+.vscode/
