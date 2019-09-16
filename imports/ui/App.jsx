@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Sensor from './Sensor.jsx';
 import Info from './Info.jsx';
 import Welcome from './Welcome.jsx'
+import { sensorMenu } from '/config'
 
 const App = () => (
 
@@ -13,18 +14,11 @@ const App = () => (
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/s/distance1">1</Link>
-          </li>
-          <li>
-            <Link to="/s/distance2">2</Link>
-          </li>
-          <li>
-            <Link to="/s/distance3">3</Link>
-          </li>
-          <li>
-            <Link to="/s/distance4">4</Link>
-          </li>                              
+          {
+            sensorMenu.map( entry => <li key={entry.sensor}>
+              <Link to={`/s/${entry.sensor}`}>{entry.title}</Link>
+            </li> )
+          }                          
           <li>
             <Link to="/info/">Info</Link>
           </li>

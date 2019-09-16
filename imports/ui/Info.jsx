@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { sensors } from '/config';
 import { withTracker } from 'meteor/react-meteor-data';
 import { SensorData } from '../api/sensor_data';
 
-const n = 10 // display n recent data points
+const n = 20 // display n recent data points
 
 class Info extends Component {
   renderSensors(sensorData) {
@@ -38,7 +37,7 @@ const groupBy = function(xs, key) {
 };
 
 export default InfoContainer = withTracker(() => {
-  const handle = Meteor.subscribe('sensorData');
+  const handle = Meteor.subscribe('sensorData',n);
   return {
     sensorData: SensorData.find().fetch(),
   };

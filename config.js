@@ -5,6 +5,26 @@ const sensors = [
   "distance4",
 ]
 
+const sensorMenu = [
+  {
+    sensor: "distance1",
+    title: "1"
+  },
+  {
+    sensor: "distance2",
+    title: "2"
+  },
+  {  
+    sensor: "distance3",
+    title: "3"
+  },
+  {
+    sensor: "distance4",
+    title: "4"
+  }
+]
+
 export {
-  sensors
+  sensors,
+  sensorMenu
 }
