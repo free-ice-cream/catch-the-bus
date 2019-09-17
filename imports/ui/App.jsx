@@ -9,6 +9,9 @@ const App = () => (
 
   <Router>
     <div>
+
+      <h1>Catch The Bus</h1>
+
       <nav>
         <ul>
           <li>
@@ -24,8 +27,6 @@ const App = () => (
           </li>
         </ul>
       </nav>
-
-      <h1>Catch The Bus</h1>
 
       <Route path="/" exact component={Welcome} />
       <Route path="/s/:name" component={Sensor} />

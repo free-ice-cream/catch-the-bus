@@ -1,10 +1,10 @@
 
-import { sensors } from '/config'
+import { sensors, sensorDataRestPath } from '/config'
 import { insertSensorData } from '/imports/api/sensor_data'
 
 function initRestApi() {
   // Listen to incoming HTTP requests (can only be used on the server).
-  WebApp.connectHandlers.use('/api/sensorData', (req, res, next) => {
+  WebApp.connectHandlers.use(sensorDataRestPath, (req, res, next) => {
     const propNames = Object.getOwnPropertyNames(req.query)
     if (propNames.indexOf("name") < 0) {
       res.writeHead(400);
@@ -19,7 +19,7 @@ function initRestApi() {
     const name = req.query.name
     if (sensors.indexOf(name) < 0) {
       res.writeHead(400);
-      res.end(`unknown sensor name ${name}`);      
+      res.end(`unknown sensor name ${name}, available names: ${sensors.join(',')}`);      
       return
     }
     const value = parseInt(req.query.value)

@@ -1,4 +1,36 @@
+/* General */
+
 body {
   padding: 10px;
   font-family: sans-serif;
+  background-color: #F0D722;
+  color: black;
+}
+
+h1,h2,h3,h4,h5 {
+  margin-top: 0;
+}
+
+/* Info */
+
+.Info ul, .Info ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Info ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.Info ul > li {
+  float: left;
+  padding: 0 1em 2em 1em;
+}
+
+/* Sensor */
+
+.Sensor {
+  font-size: 300%;
 }

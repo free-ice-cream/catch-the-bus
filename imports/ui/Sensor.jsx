@@ -10,7 +10,7 @@ class Sensor extends Component {
     const output = this.props.data.value
 
     return (
-      <div>
+      <div className="Sensor">
         { output }
       </div>
     );

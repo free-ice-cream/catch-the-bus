@@ -24,7 +24,10 @@ const sensorMenu = [
   }
 ]
 
+const sensorDataRestPath = '/api/sensorData'
+
 export {
   sensors,
-  sensorMenu
+  sensorMenu,
+  sensorDataRestPath
 }
