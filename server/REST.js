@@ -19,7 +19,7 @@ function initRestApi() {
     const name = req.query.name
     if (sensors.indexOf(name) < 0) {
       res.writeHead(400);
-      res.end(`unknown sensor name ${name}, available names: ${sensors.join(',')}`);      
+      res.end(`unknown sensor name "${name}". available names: ${sensors.join(', ')}`);      
       return
     }
     const value = parseInt(req.query.value)

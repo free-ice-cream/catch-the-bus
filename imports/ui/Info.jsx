@@ -15,7 +15,9 @@ class Info extends Component {
           </a>
         </h3>
         <ol>
-        { (sensorData.filter(d => d.name == name)).map( d => <li key={d._id}> {d.value} (<small>{new Date(d.timestamp).toLocaleTimeString()}</small>)</li>) }
+        { sensorData
+            .filter(d => d.name == name)
+            .map( d => <li key={d._id}> {d.value} (<small>{new Date(d.timestamp).toLocaleTimeString()}</small>)</li>) }
         </ol>
       </li>))
   }
@@ -40,6 +42,6 @@ function makeInsertSensorDataPath(sensor = sensors[0], value = -1) {
 export default InfoContainer = withTracker(() => {
   const handle = Meteor.subscribe('sensorData',n);
   return {
-    sensorData: SensorData.find().fetch(),
+    sensorData: SensorData.find({},{sort: {timestamp: -1}}).fetch(),
   };
 })(Info);
