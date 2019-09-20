@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Sensor from './Sensor.jsx';
+import SensorInput from './SensorInput.jsx';
 import Info from './Info.jsx';
 import Welcome from './Welcome.jsx'
 import { sensorMenu } from '/config'
@@ -21,7 +22,12 @@ const App = () => (
             sensorMenu.map( entry => <li key={entry.sensor}>
               <Link to={`/s/${entry.sensor}`}>{entry.title}</Link>
             </li> )
-          }                          
+          }
+          {
+            sensorMenu.map( entry => <li key={entry.sensor}>
+              <Link to={`/i/${entry.sensor}`}>Enter {entry.title}</Link>
+            </li> )
+          }
           <li>
             <Link to="/info/">Info</Link>
           </li>
@@ -30,6 +36,7 @@ const App = () => (
 
       <Route path="/" exact component={Welcome} />
       <Route path="/s/:name" component={Sensor} />
+      <Route path="/i/:name" component={SensorInput} />
       <Route path="/info/" component={Info} />
     </div>
   </Router>
