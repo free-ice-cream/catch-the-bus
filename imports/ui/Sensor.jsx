@@ -12,6 +12,7 @@ class Sensor extends Component {
     return (
       <div className="Sensor">
         { output }
+        
       </div>
     );
   }

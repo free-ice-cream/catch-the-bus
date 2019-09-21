@@ -12,9 +12,12 @@ class SensorInput extends Component {
 
     return (
       <div className="Sensor">
-        <button onClick={() => this.doRequest(this.props.match.params.name, 500)}>500</button>
-        <button onClick={() => this.doRequest(this.props.match.params.name, 250)}>250</button>
-        <button onClick={() => this.doRequest(this.props.match.params.name, 100)}>100</button>
+      <button onClick={() => this.doRequest(this.props.match.params.name, 500)}>500</button>
+      <button onClick={() => this.doRequest(this.props.match.params.name, 400)}>400</button>
+      <button onClick={() => this.doRequest(this.props.match.params.name, 300)}>300</button>
+      <button onClick={() => this.doRequest(this.props.match.params.name, 200)}>200</button>
+      <button onClick={() => this.doRequest(this.props.match.params.name, 100)}>100</button>
+
       </div>
     );
   }
